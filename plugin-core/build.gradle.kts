@@ -49,7 +49,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-persistence-mongo:2.0.4")
 
     // -- persistence data configure --
-    implementation("eu.okaeri:okaeri-configs-json-gson:5.0.2")
+    implementation("eu.okaeri:okaeri-configs-json-gson:5.0.6")
     implementation("eu.okaeri:okaeri-configs-json-simple:5.0.2")
 
     // -- injector --
