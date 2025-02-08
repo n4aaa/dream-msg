@@ -7,11 +7,6 @@ repositories {
 }
 
 dependencies {
-    // -- bukkit-versions --
-    project(":plugin-core:nms").dependencyProject.subprojects.forEach {
-        implementation(it)
-    }
-
     // -- spigot api -- (base)
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 
@@ -72,28 +67,22 @@ dependencies {
 
 tasks.withType<ShadowJar> {
 
-    archiveFileName.set("Dream-Template-${project.version}.jar")
+    archiveFileName.set("Dream-Msg-${project.version}.jar")
 
-    relocate("com.cryptomorin", "cc.dreamcode.template.libs.com.cryptomorin")
-    relocate("eu.okaeri", "cc.dreamcode.template.libs.eu.okaeri")
-    relocate("net.kyori", "cc.dreamcode.template.libs.net.kyori")
+    relocate("com.cryptomorin", "cc.dreamcode.msgplugin.libs.com.cryptomorin")
+    relocate("eu.okaeri", "cc.dreamcode.msgplugin.libs.eu.okaeri")
+    relocate("net.kyori", "cc.dreamcode.msgplugin.libs.net.kyori")
 
-    relocate("cc.dreamcode.platform", "cc.dreamcode.template.libs.cc.dreamcode.platform")
-    relocate("cc.dreamcode.utilities", "cc.dreamcode.template.libs.cc.dreamcode.utilities")
-    relocate("cc.dreamcode.menu", "cc.dreamcode.template.libs.cc.dreamcode.menu")
-    relocate("cc.dreamcode.command", "cc.dreamcode.template.libs.cc.dreamcode.command")
-    relocate("cc.dreamcode.notice", "cc.dreamcode.template.libs.cc.dreamcode.notice")
+    relocate("cc.dreamcode.platform", "cc.dreamcode.msgplugin.libs.cc.dreamcode.platform")
+    relocate("cc.dreamcode.utilities", "cc.dreamcode.msgplugin.libs.cc.dreamcode.utilities")
+    relocate("cc.dreamcode.menu", "cc.dreamcode.msgplugin.libs.cc.dreamcode.menu")
+    relocate("cc.dreamcode.command", "cc.dreamcode.msgplugin.libs.cc.dreamcode.command")
+    relocate("cc.dreamcode.notice", "cc.dreamcode.msgplugin.libs.cc.dreamcode.notice")
 
-    relocate("org.bson", "cc.dreamcode.template.libs.org.bson")
-    relocate("com.mongodb", "cc.dreamcode.template.libs.com.mongodb")
-    relocate("com.zaxxer", "cc.dreamcode.template.libs.com.zaxxer")
-    relocate("org.slf4j", "cc.dreamcode.template.libs.org.slf4j")
-    relocate("org.json", "cc.dreamcode.template.libs.org.json")
-    relocate("com.google.gson", "cc.dreamcode.template.libs.com.google.gson")
-
-    minimize {
-        parent!!.project(":plugin-core:nms").subprojects.forEach {
-            exclude(project(it.path))
-        }
-    }
+    relocate("org.bson", "cc.dreamcode.msgplugin.libs.org.bson")
+    relocate("com.mongodb", "cc.dreamcode.msgplugin.libs.com.mongodb")
+    relocate("com.zaxxer", "cc.dreamcode.msgplugin.libs.com.zaxxer")
+    relocate("org.slf4j", "cc.dreamcode.msgplugin.libs.org.slf4j")
+    relocate("org.json", "cc.dreamcode.msgplugin.libs.org.json")
+    relocate("com.google.gson", "cc.dreamcode.msgplugin.libs.com.google.gson")
 }

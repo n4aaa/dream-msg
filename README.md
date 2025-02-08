@@ -1,13 +1,6 @@
-Working with template:
------
-Take a loot at [Dream-Otchlan](https://github.com/DreamPoland/dream-otchlan), example project based on platform.
+**Dream-Msg**
 
-**Required:**
 -----
-- Spigot-api 1.8.8 with NMS support.
-- JDK 21, target 1.8 for compatibility.
-
-------
 
 **Libraries**: <33
 - [Dream-Platform](https://github.com/DreamPoland/dream-platform) by [DreamCode](https://github.com/DreamPoland)

@@ -1,7 +1,7 @@
-main: "cc.dreamcode.template.TemplatePlugin"
+main: "cc.dreamcode.msgplugin.MsgPlugin"
 version: "1.0-InDEV"
-name: "Dream-Template"
-description: "Dream-Template plugin written by dreamcode.cc"
+name: "Dream-MsgPlugin"
+description: "Dream-MsgPlugin plugin written by dreamcode.cc"
 website: "https://dreamcode.cc"
-author: "author"
+author: "n4a_"
 api-version: 1.13
