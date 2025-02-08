@@ -59,7 +59,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-placeholders-core:5.0.1")
 
     // -- tasker (easy sync/async scheduler) --
-    implementation("eu.okaeri:okaeri-tasker-bukkit:2.1.0-beta.3")
+    implementation("eu.okaeri:okaeri-tasker-bukkit:3.0.2-beta.5")
 
     // -- Multi-Version Items helper --
     implementation("com.github.cryptomorin:XSeries:11.3.0")
