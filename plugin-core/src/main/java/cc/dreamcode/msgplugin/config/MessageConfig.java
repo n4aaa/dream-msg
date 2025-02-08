@@ -14,7 +14,6 @@ import eu.okaeri.configs.annotation.Headers;
 })
 public class MessageConfig extends OkaeriConfig {
 
-
     @CustomKey("private-message")
     public BukkitNotice privateMessage = BukkitNotice.chat("&e{player} &8-> &e{target} &8: &f{message}");
     @CustomKey("ambigous-player")

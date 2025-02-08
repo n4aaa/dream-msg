@@ -4,6 +4,12 @@ import cc.dreamcode.command.bukkit.BukkitCommandProvider;
 import cc.dreamcode.menu.adventure.BukkitMenuProvider;
 import cc.dreamcode.menu.adventure.serializer.MenuBuilderSerializer;
 import cc.dreamcode.msgplugin.command.MsgCommand;
+import cc.dreamcode.msgplugin.command.handler.InvalidInputHandlerImpl;
+import cc.dreamcode.msgplugin.command.handler.InvalidPermissionHandlerImpl;
+import cc.dreamcode.msgplugin.command.handler.InvalidSenderHandlerImpl;
+import cc.dreamcode.msgplugin.command.handler.InvalidUsageHandlerImpl;
+import cc.dreamcode.msgplugin.command.result.BukkitNoticeResolver;
+import cc.dreamcode.msgplugin.config.MessageConfig;
 import cc.dreamcode.notice.bukkit.BukkitNoticeProvider;
 import cc.dreamcode.notice.serializer.BukkitNoticeSerializer;
 import cc.dreamcode.platform.DreamVersion;
@@ -15,18 +21,8 @@ import cc.dreamcode.platform.bukkit.serializer.ItemStackSerializer;
 import cc.dreamcode.platform.component.ComponentService;
 import cc.dreamcode.platform.other.component.DreamCommandExtension;
 import cc.dreamcode.platform.persistence.DreamPersistence;
-import cc.dreamcode.platform.persistence.component.DocumentPersistenceResolver;
-import cc.dreamcode.platform.persistence.component.DocumentRepositoryResolver;
-import cc.dreamcode.msgplugin.command.handler.InvalidInputHandlerImpl;
-import cc.dreamcode.msgplugin.command.handler.InvalidPermissionHandlerImpl;
-import cc.dreamcode.msgplugin.command.handler.InvalidSenderHandlerImpl;
-import cc.dreamcode.msgplugin.command.handler.InvalidUsageHandlerImpl;
-import cc.dreamcode.msgplugin.command.result.BukkitNoticeResolver;
-import cc.dreamcode.msgplugin.config.MessageConfig;
-import cc.dreamcode.msgplugin.config.PluginConfig;
 import eu.okaeri.configs.serdes.OkaeriSerdesPack;
 import eu.okaeri.configs.yaml.bukkit.serdes.SerdesBukkit;
-import eu.okaeri.persistence.document.DocumentPersistence;
 import eu.okaeri.tasker.bukkit.BukkitTasker;
 import lombok.Getter;
 import lombok.NonNull;
@@ -61,18 +57,6 @@ public final class MsgPlugin extends DreamBukkitPlatform implements DreamBukkitC
         componentService.registerComponent(InvalidPermissionHandlerImpl.class);
         componentService.registerComponent(InvalidSenderHandlerImpl.class);
         componentService.registerComponent(InvalidUsageHandlerImpl.class);
-
-        componentService.registerComponent(PluginConfig.class, pluginConfig -> {
-            // register persistence + repositories
-            this.registerInjectable(pluginConfig.storageConfig);
-
-            componentService.registerResolver(DocumentPersistenceResolver.class);
-            componentService.registerComponent(DocumentPersistence.class);
-            componentService.registerResolver(DocumentRepositoryResolver.class);
-
-            // enable additional logs and debug messages
-            componentService.setDebug(pluginConfig.debug);
-        });
 
         componentService.registerComponent(MsgCommand.class);
     }
