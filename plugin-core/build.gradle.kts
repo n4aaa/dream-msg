@@ -44,7 +44,7 @@ dependencies {
     implementation("cc.dreamcode.menu:bukkit-adventure-serializer:1.3.7")
 
     // -- configs--
-    implementation("eu.okaeri:okaeri-configs-yaml-bukkit:5.0.2")
+    implementation("eu.okaeri:okaeri-configs-yaml-bukkit:5.0.6")
     implementation("eu.okaeri:okaeri-configs-serdes-bukkit:5.0.2")
     implementation("eu.okaeri:okaeri-configs-serdes-commons:5.0.2")
 
